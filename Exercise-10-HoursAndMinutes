@@ -1,0 +1,42 @@
+/*-------------------------------- Exercise 10 - HoursAndMinutes ----------------------------
+ Write a program named HoursAndMinutes that declares a minutes variable to represent minutes
+ worked on a job, and assign a value to it. Display the value in hours and minutes. 
+
+ - Example: 197 minutes becomes 3 hours and 17 minutes.
+ 
+ Program Requirement:
+ - Display a value of minutes in hours and minutes
+*/
+
+//Programmer: ProgrammerFromMars
+using System;
+using static System.Console;
+
+namespace HoursAndMinutes
+{
+    class HoursAndMinutes
+    {
+        static void Main(string[] args)
+        {
+            //Display heading
+            WriteLine("----------------------------------------------");
+            WriteLine("-              HOURS AND MINUTES             -");
+            WriteLine("----------------------------------------------");
+
+            //---------------- Variable Declarations ------------------
+            int userMinutes = 197;                    //Store total number of minutes
+            int calculatedHours = 0;                //Store calculated hours from total minutes
+            int calculatedMinutes = 0;              //Store minutes remaing after calculating hours
+
+            //Calculate hours and minutes
+            calculatedHours = userMinutes / 60;   
+            calculatedMinutes = userMinutes % 60;
+
+            //Display hours and minutes
+            WriteLine("\n{0} minutes becomes {1} hours and {2} minutes\n", userMinutes, calculatedHours, calculatedMinutes);
+
+            WriteLine("---------------------END----------------------");
+            ReadLine(); //System Pause
+        }
+    }
+}
