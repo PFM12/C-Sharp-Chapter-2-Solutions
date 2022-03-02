@@ -1,0 +1,60 @@
+/*--------------------------------- Exercise 12 - EggsInteractive ---------------------------------
+  Write a program named Eggs that declares four variables to hold the number of eggs produced
+  in a month by each of four chickens, and assign a value to each variable. Sum the eggs,
+  then display the total in dozens and eggs.
+
+  Modify the Eggs program to create a new one named EggsInteractive that prompts the user for and 
+  accepts a number of eggs for each chicken.
+
+  Program Requirement:
+  - Display the total eggs in dozens and eggs
+ */
+
+//Programmer: ProgrammerFromMars
+using System;
+using static System.Console;
+
+namespace Exercise12
+{
+    class EggsInteractive
+    {
+        static void Main(string[] args)
+        {
+            //Display Heading
+            WriteLine("--------------------------------------------------------");
+            WriteLine("-                    EGGS INTERACTIVE                  -");
+            WriteLine("--------------------------------------------------------");
+
+            //----------------------- Variable Declaration ---------------------
+            int eggs1 = 0;               //Store value of Eggs for Chicken 1
+            int eggs2 = 0;               //Store value of Eggs for Chicken 2
+            int eggs3 = 0;               //Store value of Eggs for Chicken 3
+            int eggs4 = 0;               //Store value of Eggs for Chicken 4
+            int calculatedSum;           //Store value of total number of eggs
+            int calculatedDozen;         //Store value of calculated Dozens
+            int calculatedLeftOver;      //Store value of left over eggs
+
+            //Get number of eggs per chicken from the user (user input)
+            Write("Enter Chicken 1 Eggs >> ");
+            eggs1 = int.Parse(ReadLine());
+            Write("Enter Chicken 2 Eggs >> ");
+            eggs2 = int.Parse(ReadLine());
+            Write("Enter Chicken 3 Eggs >> ");
+            eggs3 = int.Parse(ReadLine());
+            Write("Enter Chicken 4 Eggs >> ");
+            eggs4 = int.Parse(ReadLine());
+
+            //Calculate the sum of the eggs, dozens and left overs eggs
+            calculatedSum = eggs1 + eggs2 + eggs3 + eggs4;
+            calculatedDozen = calculatedSum / 12;
+            calculatedLeftOver = calculatedSum % 12;
+
+            //Display total in Dozens and (leftover) Eggs
+            WriteLine("\nA total of {0} Eggs is {1} Dozens and {2} Eggs.\n", calculatedSum, calculatedDozen, calculatedLeftOver);
+
+            WriteLine("---------------------END--------------------");
+
+            ReadLine(); //System Pause
+        }
+    }
+}
