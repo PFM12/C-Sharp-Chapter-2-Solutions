@@ -1,0 +1,49 @@
+/*--------------------------------- Exercise 11 - Eggs --------------------------------------
+  Write a program named Eggs that declares four variables to hold the number of eggs produced
+  in a month by each of four chickens, and assign a value to each variable. Sum the eggs,
+  then display the total in dozens and eggs.
+
+  -Example, a total of 127 eggs is 10 dozen and 7 eggs.
+
+  Program Requirement:
+  - Display the total eggs in dozens and eggs
+ */
+
+//Programmer: ProgrammerFromMars
+using System;
+using static System.Console;
+
+namespace Exercise11
+{
+    class Eggs
+    {
+        static void Main(string[] args)
+        {
+            //Display Heading
+            WriteLine("-----------------------------------------------------");
+            WriteLine("-                       EGGS                        -");
+            WriteLine("-----------------------------------------------------");
+
+            //--------------------- Variable Declaration ---------------------
+            int eggs1 = 30;              //Store value of Eggs for Chicken 1
+            int eggs2 = 43;              //Store value of Eggs for Chicken 2
+            int eggs3 = 27;              //Store value of Eggs for Chicken 3
+            int eggs4 = 27;              //Store value of Eggs for Chicken 4
+            int calculatedSum;           //Store value of total number of eggs
+            int calculatedDozen;         //Store value of calculated Dozens
+            int calculatedLeftOver;      //Store value of left over eggs
+
+            //Calculate the sum of the eggs, dozens and left overs eggs
+            calculatedSum = eggs1 + eggs2 + eggs3 + eggs4;
+            calculatedDozen = calculatedSum / 12;
+            calculatedLeftOver = calculatedSum % 12;
+
+            //Display total in Dozens and (leftover) Eggs
+            WriteLine("\nA total of {0} Eggs is {1} Dozens and {2} Eggs.\n", calculatedSum, calculatedDozen, calculatedLeftOver);
+
+            WriteLine("--------------------------END------------------------");
+
+            ReadLine(); //System Pause
+        }
+    }
+}
