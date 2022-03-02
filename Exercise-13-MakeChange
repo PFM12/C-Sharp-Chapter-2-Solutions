@@ -1,0 +1,52 @@
+/*-------------------------------- Exercise 13 - MakeChange ---------------------------
+   Write a program named MakeChange that calculates and displays the conversion of an 
+   entered number of dollars into currency denominations—twenties, tens, fives, and ones.
+ 
+   - Example: $113 is 5 twenties, 1 ten, 0 fives, and 3 ones. 
+
+   Program Requirement:
+   - Display the conversion of an entered number of dollars into currency denominations;
+     - Twenties, tens, fives, and ones.
+ */
+
+//Programmer: ProgrammerFromMars
+using System;
+using static System.Console;
+
+
+namespace Exercise13
+{
+    class MakeChange
+    {
+        static void Main(string[] args)
+        {
+            //Display Heading
+            WriteLine("----------------------------------------------------------");
+            WriteLine("-                     MAKE CHANGE                        -");
+            WriteLine("----------------------------------------------------------");
+
+            //--------------------- Variable Declaration -----------------------
+            int userInputCash = 0;     //Store input value for total cash
+            int calc20 = 0;            //Store value of Calculated 20s denominations
+            int calc10 = 0;            //Store value of Calculated 10s denominations
+            int calc5 = 0;             //Store value of Calculated 5s denominations
+            int calc1 = 0;             //Store value of Calculated 1s denominations
+
+            //Get total cash from user (User input).
+            Write("Enter total cash >> ");
+            userInputCash = int.Parse(ReadLine());
+
+            //Calculate currency denominations
+            calc20 = userInputCash / 20;
+            calc10 = userInputCash % 20 / 10;
+            calc5 = userInputCash % 10 / 5;
+            calc1 = userInputCash % 5;
+
+            //Display conversion of an entered number of dollars
+            WriteLine("\n${0} is {1} twenties, {2} ten, {3} fives, and {4} ones.\n", userInputCash, calc20, calc10, calc5, calc1);
+            WriteLine("----------------------------END---------------------------");
+
+            ReadLine(); //System Pause
+        }
+    }
+}
