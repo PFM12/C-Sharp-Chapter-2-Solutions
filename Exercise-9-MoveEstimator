@@ -1,0 +1,56 @@
+/*--------------------------- Exercise 9 - MoveEstimator -------------------------------
+     * Malcolm Movers charges a base rate of $200 per move plus $150 per hour and $2 per mile.
+      Write a program named MoveEstimator that prompts a user for and accepts estimates for
+      the number of hours for a job and the number of miles involved in the move and displays
+      the total moving fee.
+
+      Program Requirement:
+      -Calculate and Display the total moving fee
+*/
+//Programmer: ProgrammerFromMars
+
+using System;
+using static System.Console;
+
+namespace Exercise9
+{  
+    class MoveEstimator
+    {
+        static void Main(string[] args)
+        {         
+            //Display heading
+            WriteLine("----------------------------------------------------------");
+            WriteLine("-                       MOVE ESTIMATOR                   -");
+            WriteLine("----------------------------------------------------------");
+   
+            //---------------- Constant declarations ----------------
+            const double BASE_RATE = 200.00;
+            const double HOURLY_RATE = 150.00;
+            const double MILE_RATE = 2.00;
+
+            //--------------- Variable Declaration ------------------
+            double userEstimatedHours = 0.0;        //Store user input of estimated hours
+            double userEstimatedMiles = 0.0;        //Store user input of estimated miles
+            double calculatedTotalMovingFee = 0.0;  //Store the calculated total moving fee
+
+            //Get estimated hours and miles from user (user input) - Skip error checking
+            Write("Enter Estimated hours >> ");
+            userEstimatedHours = double.Parse(ReadLine());
+            Write("Enter Estimated miles >> ");
+            userEstimatedMiles = double.Parse(ReadLine());
+
+            //Calculate the total moving fee
+            calculatedTotalMovingFee = BASE_RATE + ( (HOURLY_RATE * userEstimatedHours) + (MILE_RATE * userEstimatedMiles) );
+
+            //Display the total moving fee
+            WriteLine("\n\nTOTAL MOVING FEE CALCULATION:");
+            WriteLine("{0} + ( {1}*{2} + {3}*{4} )", BASE_RATE, HOURLY_RATE, userEstimatedHours, MILE_RATE, userEstimatedMiles);
+            WriteLine("\nESTIMATED COST: {0:C}", calculatedTotalMovingFee);
+
+            WriteLine("----------------------------END---------------------------");
+            ReadLine();//System Pause
+        }
+    }
+}
+
+
