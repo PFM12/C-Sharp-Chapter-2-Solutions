@@ -1,0 +1,77 @@
+/*----------------------------- Exercise 14 - TestInteractive --------------------------------
+  Write a program named TestsInteractive that prompts a user for eight test scores and displays
+  the average of the test scores to two decimal places.
+
+  Program Requirement:
+  - Display the average of eight test scores.
+ */
+
+//Programmer: ProgrammerFromMars
+using System;
+using static System.Console;
+
+namespace exercise14
+{
+    class TestInteractive
+    {
+        static void Main(string[] args)
+        {
+            //Display heading
+            WriteLine("----------------------------------------------------");
+            WriteLine("-                  TEST INTERACTIVE                -");
+            WriteLine("----------------------------------------------------");
+           
+            //-------------------- Variable Declaration -------------------
+            int testScore1 = 0;             //Store user input for test score 1
+            int testScore2 = 0;             //Store user input for test score 2
+            int testScore3 = 0;             //Store user input for test score 3
+            int testScore4 = 0;             //Store user input for test score 4
+            int testScore5 = 0;             //Store user input for test score 5
+            int testScore6 = 0;             //Store user input for test score 6
+            int testScore7 = 0;             //Store user input for test score 7
+            int testScore8 = 0;             //Store user input for test score 8
+            int calcTestScoreSum = 0;       //Store sum of the eight test scores
+            double calcTestScoreAvg = 0.0;  //Store the calculated test score average
+             
+            //Get eight test scores from the user (User input)
+            Write("\nEnter Test Score 1 >> ");
+            testScore1 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 2 >> ");
+            testScore2 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 3 >> ");
+            testScore3 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 4 >> ");
+            testScore4 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 5 >> ");
+            testScore5 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 6 >> ");
+            testScore6 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 7 >> ");
+            testScore7 = int.Parse(ReadLine());
+
+            Write("\nEnter Test Score 8 >> ");
+            testScore8 = int.Parse(ReadLine());
+
+            //Calculate the SUM of eigth Test Scores
+            calcTestScoreSum = testScore1 + testScore2 + testScore3 + testScore4 + testScore5 + testScore6 + testScore7 + testScore8;
+
+            //Calculate the AVERAGE of the eight Test Scores
+            calcTestScoreAvg = calcTestScoreSum / 8;
+
+            //Display the average of eight test scores.
+            Write("\nStudent Test Scores: {0}, {1}, {2}, {3}, ", testScore1, testScore2, testScore3, testScore4);
+            WriteLine("{0}, {1}, {2}, {3}", testScore5, testScore6, testScore7, testScore8);
+
+            WriteLine("\nAverage: {0}", calcTestScoreAvg.ToString("F"));
+            WriteLine("--------------------------END-----------------------");
+
+            ReadLine(); //System Pause
+        }
+    }
+}
