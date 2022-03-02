@@ -1,0 +1,51 @@
+/*-------------------------------- Exercse 6 - InchesToCentmetersInteractive --------------------------------------
+   Write a C# program named InchesToCentmeters that declares a named constant that holds the number of 
+   centimeters in an inch: 2.54. Also declare a variable to represent a measurement in inches, and assign a value. 
+   Display the measurement in both inches and centimeters.
+
+   InchesToCentimeterslnteractive. Instead of assigning a value to the inches variable, accept the value from the 
+   user as input.
+
+   Program Requirement:
+   - Convert inches to centimeters and Display the measurement in both inches and centimeters.
+
+   Example: 3 inches is 7.62 centimeters.
+*/
+
+//Programmer: ProgrammerFromMArs
+using System;
+using static System.Console;
+
+namespace Exercise6
+{
+    class InchesToCentimetersInteractive
+    {
+        static void Main(string[] args)
+        {
+            //Display Heading
+            WriteLine("---------------------------------------------------------");
+            WriteLine("-         INCHES TO CENTIMETERS INTERACTIVE             -");
+            WriteLine("---------------------------------------------------------");
+
+            //---------------------- Variable Declaration ----------------------
+            const double CENT_IN_INCH = 2.54;  //Store value of centimeters in an inch
+            int inches = 0;                    //Store the value of the inch measurement
+            double calcCentimeters;            //Store measurement of centimeters after conversion
+
+            //Get the measurement in inches from the user (User Input)
+            Write("Enter inches >> ");
+            inches = int.Parse(ReadLine());
+
+            //Convert inches to centimeters
+            calcCentimeters = inches * CENT_IN_INCH;
+
+            //Display the measurement in both inches and centimeters
+            WriteLine("\n{0} inches is {1} centimeters.", inches, calcCentimeters.ToString("F"));
+
+            WriteLine("\n--------------------------END----------------------------");
+
+            ReadLine(); //System Pause
+        }
+    }
+}
+
