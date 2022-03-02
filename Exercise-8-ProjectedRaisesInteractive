@@ -1,0 +1,64 @@
+/*--------------------------- Exercise 8 - ProjectedRaisesInteractive ----------------------------
+   Write a C# program named ProjectedRaises that includes a named constant representing 
+   next year’s anticipated 4 percent raise for each employee in a company. 
+   Also declare variables to represent the current salaries for three employees. 
+   Assign values to the variables.
+   Display, with explanatory text, next year’s salary for each employee.
+ 
+   Convert the ProjectedRaises class to an interactive application named ProjectedRaisesInteractive.
+   Instead of assigning values to the salaries, accept them from the user as input.
+
+   Program Requirement:
+   - Display, with explanatory text, next year’s salary for each employee.
+ */
+
+//Programmer: PrgrammerFromMars
+using static System.Console;
+
+namespace Exercise8
+{
+    class ProjectedRaisesInteractive
+    {
+        static void Main(string[] args)
+        {
+            //Display Heading:
+            WriteLine("------------------------------------------------------------");
+            WriteLine("-                     PROJECTED RAISES                     -");
+            WriteLine("------------------------------------------------------------");
+
+            //-------------------------- Variable Declaration ----------------------
+            const double RAISE_RATE = 1.04;
+            double salary1 = 0.0;                  //Store salary of employee 1                
+            double salary2 = 0.0;                  //Store salary of employee 2
+            double salary3 = 0.0;                  //Store salary of employee 3 
+            double raisedSalary1 = 0.0;            //Store raised salary of employee 1 
+            double raisedSalary2 = 0.0;            //Store raised salary of employee 2 
+            double raisedSalary3 = 0.0;            //Store raised salary of employee 3 
+
+            //Get salary of the three employees from the user
+            Write("Enter Salary of Employee 1 >> ");
+            salary1 = int.Parse(ReadLine());
+
+            Write("\nEnter Salary of Employee 2 >> ");
+            salary2 = int.Parse(ReadLine());
+
+            Write("\nEnter Salary of Employee 3 >> ");
+            salary3 = int.Parse(ReadLine());
+
+            //Calculate salary raises
+            raisedSalary1 = salary1 * RAISE_RATE;
+            raisedSalary2 = salary2 * RAISE_RATE;
+            raisedSalary3 = salary3 * RAISE_RATE;
+
+            //Display, with explanatory text, next year’s salary for each employee
+            WriteLine("\nSALARY RAISE RATE: {0}\n", RAISE_RATE);
+            WriteLine("{0:C} will be {1:C} next year.", salary1, raisedSalary1);
+            WriteLine("{0:C} will be {1:C} next year.", salary2, raisedSalary2);
+            WriteLine("{0:C} will be {1:C} next year.\n", salary3, raisedSalary3);
+
+            WriteLine("----------------------------END-----------------------------");
+
+            ReadLine(); //System Pause
+        }
+    }
+}
